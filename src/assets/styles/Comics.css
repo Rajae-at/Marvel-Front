@@ -1,0 +1,36 @@
+.comics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.comics div {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  width: 220px;
+}
+
+.comics div:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.6);
+}
+
+.comics-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.comics h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #e62429;
+}
