@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import Comics from "./pages/Comics";
 import Characters from "./pages/Characters";
-import CharacterComics from "./pages/Characters";
+import CharacterComics from "./pages/CharacterComics";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/comics" element={<Comics />} />
         <Route path="/characters" element={<Characters />} />
-        <Route path="/character/:id" element={<CharacterComics />} />
+        <Route path="/characters/:id" element={<CharacterComics />} />
       </Routes>
     </Router>
   );

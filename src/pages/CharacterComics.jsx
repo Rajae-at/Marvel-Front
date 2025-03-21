@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const CharacterComics = () => {
-  const { id } = useParams(); //
+  const { id } = useParams();
   const [characterComics, setCharacterComics] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -11,9 +11,12 @@ const CharacterComics = () => {
     const fetchData = async () => {
       try {
         console.log("Fetching comics for character ID:", id);
+
         const response = await axios.get(`http://localhost:3000/comics/${id}`);
         console.log("Data received:", response.data);
-        setCharacterComics(response.data.results);
+
+        setCharacterComics(response.data.comics || []);
+
         setLoading(false);
       } catch (error) {
         console.log("Erreur lors de la récupération des données :", error);
