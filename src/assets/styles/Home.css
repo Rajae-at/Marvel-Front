@@ -2,3 +2,7 @@
   width: 1280px;
   margin: 0 auto;
 }
+
+.hero img {
+  margin-top: 90px;
+}
