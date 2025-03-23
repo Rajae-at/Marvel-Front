@@ -40,6 +40,7 @@ const Comics = () => {
 
           <div>
             <input
+              className="form2"
               type="text"
               value={title}
               placeholder="Recherche des comics..."

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { RiHeartAddFill } from "react-icons/ri";
-import hero2 from "../assets/images/hero-marvel3.jpg";
+import hero2 from "../assets/images/hero-marvel2.jpg";
 import "../assets/styles/Characters.css";
 
 const Characters = () => {
@@ -40,6 +40,7 @@ const Characters = () => {
 
           <div>
             <input
+              className="form"
               type="text"
               value={searchName}
               placeholder="Recherche des personnages..."

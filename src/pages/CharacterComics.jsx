@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import "../assets/styles/CharacterComics.css";
 
 const CharacterComics = () => {
   const { id } = useParams();
@@ -16,7 +17,6 @@ const CharacterComics = () => {
         console.log("Data received:", response.data);
 
         setCharacterComics(response.data.comics || []);
-
         setLoading(false);
       } catch (error) {
         console.log("Erreur lors de la récupération des données :", error);
@@ -26,16 +26,16 @@ const CharacterComics = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className="container comic-container">
       {loading ? (
         <div>Chargement...</div>
       ) : (
-        <div className="container characters">
+        <div className="comics-list">
           {characterComics.map((comic) => (
-            <div key={comic.id}>
+            <div className="comic-card" key={comic.id}>
               {comic.thumbnail ? (
                 <img
-                  className="characters-img"
+                  className="comics-img"
                   src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                   alt={comic.title}
                 />
@@ -43,7 +43,7 @@ const CharacterComics = () => {
                 <p>Image non disponible</p>
               )}
               <h3>{comic.title}</h3>
-              <p>{comic.description || "Pas de description disponible"}</p>
+              <p className="comic-description">{comic.description || null}</p>
             </div>
           ))}
         </div>
