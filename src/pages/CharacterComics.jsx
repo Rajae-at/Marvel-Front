@@ -13,7 +13,9 @@ const CharacterComics = () => {
       try {
         console.log("Fetching comics for character ID:", id);
 
-        const response = await axios.get(`http://localhost:3000/comics/${id}`);
+        const response = await axios.get(
+          `https://site--marvelra--r2kfbnxsgmtq.code.run/comics/${id}`
+        );
         console.log("Data received:", response.data);
 
         setCharacterComics(response.data.comics || []);

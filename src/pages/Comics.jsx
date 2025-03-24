@@ -16,7 +16,7 @@ const Comics = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/comics?page=${currentPage}&limit=100&title=${title}`
+          `https://site--marvelra--r2kfbnxsgmtq.code.run/comics?page=${currentPage}&limit=100&title=${title}`
         );
         setComics(response.data.results);
         setTotalPages(Math.ceil(response.data.count / 100));

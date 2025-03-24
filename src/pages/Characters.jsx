@@ -16,7 +16,7 @@ const Characters = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/characters?page=${currentPage}&limit=100&name=${searchName}`
+          `https://site--marvelra--r2kfbnxsgmtq.code.run/characters?page=${currentPage}&limit=100&name=${searchName}`
         );
         setCharacters(response.data.results);
         setTotalPages(Math.ceil(response.data.count / 100));
